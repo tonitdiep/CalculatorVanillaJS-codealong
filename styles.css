@@ -44,4 +44,17 @@ body {
 .output {
     grid-column: 1/-1;
     background-color: rgba(0, 0, 0, .75);
+    /* next align elements inside the container */
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    /* prior was space-between, space-around will push elements towards the center of container and away from the container's edges*/
+    /* text elements at bottom side-by-side */
+    flex-direction: column;   
+    /* ^^help column line up vertically, not horizontally */
+    padding: 10px;
+    /* word wrap tells app when to break our words at the middle of it */
+    word-wrap: break-word;
+    word-break: break-all;
+    /* break all words in word-break */
 }
