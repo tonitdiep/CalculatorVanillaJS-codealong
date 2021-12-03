@@ -1,0 +1,17 @@
+*, *::before, *::after {
+    box-sizing: border-box;  
+    /* ^^easier to size our elements  */
+    /* font family setup our diff elements */
+    font-family: Times New Roman, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #00aaff, #00ff6c);
+}
+
+.calculator-grid {
+    display: grid;
+}
