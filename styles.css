@@ -56,5 +56,5 @@ body {
     /* word wrap tells app when to break our words at the middle of it */
     word-wrap: break-word;
     word-break: break-all;
-    /* break all words in word-break */
+    /* break all words in word-break aka numbers won't trail too much on the calc screen*/
 }
