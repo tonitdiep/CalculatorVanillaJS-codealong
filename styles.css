@@ -33,7 +33,7 @@ body {
 }
 /* put on hover to buttons to indicate it's activity */
 .calculator-grid > button:hover {
-    background-color: rgb(255, 255, 255, .9);
+    background-color: rgba(255, 255, 255, .9);
 }
 
 /* fix spacing w/ span around buttons of = and AC */
@@ -43,4 +43,5 @@ body {
 
 .output {
     grid-column: 1/-1;
+    background-color: rgba(0, 0, 0, .75);
 }
