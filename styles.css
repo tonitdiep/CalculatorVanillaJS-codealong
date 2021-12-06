@@ -15,7 +15,7 @@ body {
 .calculator-grid {
     display: grid;
     justify-content: center;
-    /* align-items: center; */
+    /* align-items: center; changed to align-content */
     align-content: center;   
     /* ^^fill out the space  */
     min-height: 100vh;
@@ -58,3 +58,14 @@ body {
     word-break: break-all;
     /* break all words in word-break aka numbers won't trail too much on the calc screen*/
 }
+
+ .output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;  
+ }
+
+ .output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+    
+ }
