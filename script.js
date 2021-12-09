@@ -1,4 +1,4 @@
-console.log("first JS program this week");
+// console.log("first JS program this week");
 //create a calcutaor class
 class Calculator {
     // orchestrating the diplay of calculator text
@@ -20,7 +20,7 @@ class Calculator {
     }
 
     appendNumber(number) {
-           
+        this.currentOperand = number
     }
 
     chooseOperation(operation){
@@ -32,6 +32,7 @@ class Calculator {
     }
 
     updateDisplay() {
+        this.currentOperandTextElement.innerText = this.currentOperand
 
     }
 
@@ -52,4 +53,11 @@ const currentOperandTextElement = document.querySelector('[data-current-operand]
 const equalsButton = document.querySelector('[data-equals]')
 
 // create new Calculator
-const calculator = new Calculator
+const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
+
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.appendNumber(button.innerText)
+        calculator.updateDisplay()
+    })
+})
