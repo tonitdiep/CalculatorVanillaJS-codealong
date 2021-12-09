@@ -1,12 +1,18 @@
 console.log("first JS program this week");
 //create a calcutaor class
 class Calculator {
+    // orchestrating the diplay of calculator text
     constructor(previousOperandTextElement, currentOperandTextElement) {
         this.previousOperandTextElement = previousOperandTextElement
         this.currentOperandTextElement = currentOperandTextElement
+        this.clear()
+        // ^clearrs all inputs fields to default values when creting a new calculator
     }
     clear() {
-
+        this.currentOperand = ''
+        this.previousOperand = ''
+        this.operation = undefined
+ 
     }
 
     delete() {
@@ -28,7 +34,7 @@ class Calculator {
     updateDisplay() {
 
     }
-    
+
 
 }
 //select all different #, operations, AC, DEL and other misc buttons
@@ -45,3 +51,5 @@ const currentOperandTextElement = document.querySelector('[data-current-operand]
 
 const equalsButton = document.querySelector('[data-equals]')
 
+// create new Calculator
+const calculator = new Calculator
