@@ -20,7 +20,9 @@ class Calculator {
     }
 
     appendNumber(number) {
-        this.currentOperand = number
+        
+        //we want our numbers to be appended, not added 111 not 3 
+        this.currentOperand = this.currentOperand.toString() + number.toString()
     }
 
     chooseOperation(operation){
@@ -50,12 +52,11 @@ const allClearButton = document.querySelector('[data-all-clear]')
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
 
-const equalsButton = document.querySelector('[data-equals]')
-
 // create new Calculator
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
 numberButtons.forEach(button => {
+    // console.log(botton)
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText)
         calculator.updateDisplay()
