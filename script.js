@@ -20,7 +20,7 @@ class Calculator {
     }
 
     appendNumber(number) {
-        
+        if (number === '.' && this.currentOperand.includes('.')) return
         //we want our numbers to be appended, not added 111 not 3 
         this.currentOperand = this.currentOperand.toString() + number.toString()
     }
