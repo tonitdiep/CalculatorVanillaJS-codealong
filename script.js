@@ -35,7 +35,33 @@ class Calculator {
     }
 
     compute(){
-
+        // computation is the results of calculation
+        let computation 
+        //convert string to a number in prev and current variables
+        const prev = parseFloat(this.previousOperand)
+        const current = parseFloat(this.currentOperand)
+        // if it is not a # at previous OR is not a current # then we want to return, and cancles the function, completely
+        if (isNaN(prev) || isNaN(current)) return
+        //switch statements aka a bunch of if statements changed after each other on a single object on this.opeartion
+        switch (this.operation){
+            case '+' : 
+                computation = prev + current 
+                break
+            case '-' : 
+                computation = prev - current 
+                break
+            case '*' : 
+                computation = prev * current 
+                break
+            case '÷' : 
+                computation = prev / current 
+                break
+            default: 
+                return
+        }
+        this.currentOperand = computation
+        this.operation = undefined
+        this.previousOperand = ''
     }
 
     updateDisplay() {
