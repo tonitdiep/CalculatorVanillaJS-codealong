@@ -12,7 +12,6 @@ class Calculator {
         this.currentOperand = ''
         this.previousOperand = ''
         this.operation = undefined
- 
     }
 
     delete() {
@@ -26,7 +25,13 @@ class Calculator {
     }
 
     chooseOperation(operation){
-
+        if (this.currentOperand === '') return
+        if (this.previousOperand !== '') {
+            this.compute()
+        }
+        this.operation = operation
+        this.previousOperand = this.currentOperand
+        this.currentOperand = ''
     }
 
     compute(){
@@ -35,7 +40,7 @@ class Calculator {
 
     updateDisplay() {
         this.currentOperandTextElement.innerText = this.currentOperand
-
+        this.previousOperandTextElement.innerText = this.previousOperand   
     }
 
 
@@ -45,7 +50,7 @@ class Calculator {
 // between stylizng classes and JS
 
 const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operation]')
+const operationButtons = document.querySelectorAll(`[data-operation]`)
 const equalsButton = document.querySelector('[data-equals]')
 const deleteButton = document.querySelector('[data-delete]')
 const allClearButton = document.querySelector('[data-all-clear]')
@@ -59,6 +64,13 @@ numberButtons.forEach(button => {
     // console.log(botton)
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText)
+        calculator.updateDisplay()
+    })
+})
+
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperation(button.innerText)
         calculator.updateDisplay()
     })
 })
